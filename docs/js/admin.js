@@ -1,17 +1,1 @@
-async function loadLogs() {
-  try {
-    const res = await fetch(`${API_BASE}/logs`);
-    const logs = await res.json();
-    const container = document.getElementById("logContainer");
-    container.innerHTML = "";
-    logs.forEach(log => {
-      const div = document.createElement("div");
-      div.className = "log-entry";
-      div.textContent = `[${log.timestamp}] ${log.message}`;
-      container.appendChild(div);
-    });
-  } catch (err) {
-    console.error("Fehler beim Laden der Logs", err);
-  }
-}
-loadLogs();
+document.addEventListener('DOMContentLoaded', ()=>{ const loginBtn = document.getElementById('loginBtn'); const adminPass = document.getElementById('adminPass'); const loginStatus = document.getElementById('loginStatus'); const adminPanel = document.getElementById('adminPanel'); const subsDiv = document.getElementById('subs'); let token = null; loginBtn && loginBtn.addEventListener('click', async ()=>{ loginStatus.textContent = 'Logging in...'; const pwd = adminPass.value; try{ const res = await fetch(API_BASE + '/admin/login', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ password: pwd }) }); const j = await res.json(); if(j.ok && j.token){ token = j.token; loginStatus.textContent = 'Logged in'; document.getElementById('loginBox').style.display='none'; adminPanel.style.display = 'block'; loadAdmin(); } else { loginStatus.textContent = 'Login failed'; } }catch(e){ loginStatus.textContent = 'Error'; console.error(e); } }); async function loadAdmin(){ try{ const res = await fetch(API_BASE + '/admin/logs', { headers: { Authorization: 'Bearer ' + token } }); const j = await res.json(); if(!j.ok){ subsDiv.innerHTML = '<div class="muted">Auth required</div>'; return; } const subs = j.submissions || []; subsDiv.innerHTML = subs.map(s=>`<div class="item"><strong>${escapeHtml(s.name)}</strong><div class="muted">${new Date(s.createdAt).toLocaleString()}</div><p>${escapeHtml(s.message)}</p><div class="row"><button data-id="${s.id}" class="btn pub">${s.published ? 'Unpublish' : 'Publish'}</button><button data-id="${s.id}" class="btn del">Delete</button></div></div>`).join(''); Array.from(subsDiv.querySelectorAll('.pub')).forEach(b=> b.addEventListener('click', togglePub)); Array.from(subsDiv.querySelectorAll('.del')).forEach(b=> b.addEventListener('click', delSub)); }catch(e){ console.error(e); subsDiv.innerHTML = '<div class="muted">Error loading</div>'; } } async function togglePub(e){ const id = e.currentTarget.getAttribute('data-id'); const publish = e.currentTarget.textContent.trim() === 'Publish'; await fetch(API_BASE + '/admin/publish', { method:'POST', headers:{'Content-Type':'application/json', Authorization:'Bearer ' + token}, body: JSON.stringify({ id, publish }) }); loadAdmin(); } async function delSub(e){ if(!confirm('Delete?')) return; const id = e.currentTarget.getAttribute('data-id'); await fetch(API_BASE + '/admin/delete', { method:'POST', headers:{'Content-Type':'application/json', Authorization:'Bearer ' + token}, body: JSON.stringify({ id }) }); loadAdmin(); } }); function escapeHtml(s){ return String(s||'').replace(/[&<>\"']/g, m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":"&#39;"}[m])); }

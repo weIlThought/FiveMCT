@@ -1,11 +1,3 @@
-// API Base
+// Configure your API base endpoint here (no trailing slash)
 const API_BASE = "http://localhost:3000/api";
-
-// 🌙 Darkmode toggle
-const toggleBtn = document.getElementById("darkToggle");
-if (toggleBtn) {
-  toggleBtn.addEventListener("click", () => {
-    document.body.classList.toggle("dark");
-    toggleBtn.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
-  });
-}
+(function(){ const themeBtnIds=['themeBtn']; function setTheme(dark){ if(dark) document.body.classList.add('dark'); else document.body.classList.remove('dark'); const btns = themeBtnIds.map(id=>document.getElementById(id)).filter(Boolean); btns.forEach(b=>b.textContent = dark ? '☀️' : '🌙'); try{ localStorage.setItem('cp_dark', dark ? '1' : '0'); }catch(e){} } const prefer = (localStorage.getItem('cp_dark')==='1') || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches); setTheme(prefer); document.addEventListener('DOMContentLoaded', ()=>{ themeBtnIds.forEach(id=>{ const el=document.getElementById(id); if(el) el.addEventListener('click', ()=> setTheme(!document.body.classList.contains('dark'))); }); document.getElementById('year') && (document.getElementById('year').textContent = new Date().getFullYear()); });})();
