@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Community Portal</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <h1>Community Portal</h1>
+  </header>
+  <main>
+    <section>
+      <h2>Beitrag einreichen</h2>
+      <form id="submitForm">
+        <input type="text" id="title" placeholder="Titel" required />
+        <textarea id="content" placeholder="Inhalt..." required></textarea>
+        <button type="submit">Senden</button>
+      </form>
+      <p id="response"></p>
+    </section>
+  </main>
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
