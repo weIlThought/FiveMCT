@@ -1,1 +1,52 @@
-<!doctype html><html lang="de"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Community Portal — Dashboard</title><link rel="stylesheet" href="css/style.css"/></head><body><div class="app"><aside class="sidebar"><div class="brand">Community<span>Portal</span></div><nav><a href="index.html" class="active">Dashboard</a><a href="submit.html">Submit</a><a href="admin.html">Admin</a></nav><div class="theme-toggle"><button id="themeBtn">🌙</button></div></aside><main class="main"><header class="topbar"><h1>Dashboard</h1><div class="top-actions"><input id="search" placeholder="Suche..." /></div></header><section class="grid"><div class="card large"><h2>Willkommen</h2><p>Dies ist dein neues Community Portal — modern, responsive und mit Darkmode.</p></div><div class="card"><h3>Neue Einreichungen</h3><div id="recent"></div></div><div class="card"><h3>Statistiken</h3><ul class="stats"><li><strong id="total">0</strong><span>Total Submissions</span></li><li><strong id="published">0</strong><span>Published</span></li><li><strong id="pending">0</strong><span>Pending</span></li></ul></div></section><footer class="footer">© <span id="year"></span> Community Portal</footer></main></div><script src="js/config.js"></script><script src="js/main.js"></script></body></html>
+<!doctype html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Community Portal — Dashboard</title>
+    <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+    <div class="app">
+        <aside class="sidebar">
+            <div class="brand">Community<span>Portal</span></div>
+            <nav><a href="index.html" class="active">Dashboard</a><a href="submit.html">Submit</a><a href="admin.html">Admin</a></nav>
+            <div class="theme-toggle">
+                <button id="themeBtn">🌙</button>
+            </div>
+        </aside>
+        <main class="main">
+            <header class="topbar">
+                <h1>Dashboard</h1>
+                <div class="top-actions">
+                    <input id="search" placeholder="Suche..." />
+                </div>
+            </header>
+            <section class="grid">
+                <div class="card large">
+                    <h2>Willkommen</h2>
+                    <p>Dies ist dein neues Community Portal — modern, responsive und mit Darkmode.</p>
+                </div>
+                <div class="card">
+                    <h3>Neue Einreichungen</h3>
+                    <div id="recent"></div>
+                </div>
+                <div class="card">
+                    <h3>Statistiken</h3>
+                    <ul class="stats">
+                        <li><strong id="total">0</strong><span>Total Submissions</span></li>
+                        <li><strong id="published">0</strong><span>Published</span></li>
+                        <li><strong id="pending">0</strong><span>Pending</span></li>
+                    </ul>
+                </div>
+            </section>
+            <footer class="footer">© <span id="year"></span> Community Portal</footer>
+        </main>
+    </div>
+    <script src="js/config.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

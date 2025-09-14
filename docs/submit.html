@@ -1,1 +1,48 @@
-<!doctype html><html lang="de"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Submit — Community Portal</title><link rel="stylesheet" href="css/style.css"/></head><body><div class="app"><aside class="sidebar"><div class="brand">Community<span>Portal</span></div><nav><a href="index.html">Dashboard</a><a href="submit.html" class="active">Submit</a><a href="admin.html">Admin</a></nav><div class="theme-toggle"><button id="themeBtn">🌙</button></div></aside><main class="main"><header class="topbar"><h1>Submit</h1></header><section class="grid single"><div class="card form-card"><h2>Schicke uns eine Nachricht</h2><form id="submitForm"><label>Name<input id="name" required /></label><label>Nachricht<textarea id="message" required></textarea></label><div class="row"><button type="submit" class="btn primary">Senden</button><button type="reset" class="btn">Zurücksetzen</button></div><div id="status" class="status"></div></form></div></section><footer class="footer">© <span id="year"></span> Community Portal</footer></main></div><script src="js/config.js"></script><script src="js/main.js"></script></body></html>
+<!doctype html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Submit — Community Portal</title>
+    <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+    <div class="app">
+        <aside class="sidebar">
+            <div class="brand">Community<span>Portal</span></div>
+            <nav><a href="index.html">Dashboard</a><a href="submit.html" class="active">Submit</a><a href="admin.html">Admin</a></nav>
+            <div class="theme-toggle">
+                <button id="themeBtn">🌙</button>
+            </div>
+        </aside>
+        <main class="main">
+            <header class="topbar">
+                <h1>Submit</h1></header>
+            <section class="grid single">
+                <div class="card form-card">
+                    <h2>Schicke uns eine Nachricht</h2>
+                    <form id="submitForm">
+                        <label>Name
+                            <input id="name" required />
+                        </label>
+                        <label>Nachricht
+                            <textarea id="message" required></textarea>
+                        </label>
+                        <div class="row">
+                            <button type="submit" class="btn primary">Senden</button>
+                            <button type="reset" class="btn">Zurücksetzen</button>
+                        </div>
+                        <div id="status" class="status"></div>
+                    </form>
+                </div>
+            </section>
+            <footer class="footer">© <span id="year"></span> Community Portal</footer>
+        </main>
+    </div>
+    <script src="js/config.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

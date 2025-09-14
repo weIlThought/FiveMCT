@@ -1,1 +1,44 @@
-<!doctype html><html lang="de"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Admin — Community Portal</title><link rel="stylesheet" href="css/style.css"/></head><body><div class="app"><aside class="sidebar"><div class="brand">Community<span>Portal</span></div><nav><a href="index.html">Dashboard</a><a href="submit.html">Submit</a><a href="admin.html" class="active">Admin</a></nav><div class="theme-toggle"><button id="themeBtn">🌙</button></div></aside><main class="main"><header class="topbar"><h1>Admin</h1></header><section class="grid single"><div class="card"><h2>Login</h2><div id="loginBox"><input type="password" id="adminPass" placeholder="Admin Password" /><button id="loginBtn" class="btn primary">Login</button><div id="loginStatus" class="status"></div></div></div><div class="card" id="adminPanel" style="display:none"><h2>Submissions</h2><div id="subs"></div></div></section><footer class="footer">© <span id="year"></span> Community Portal</footer></main></div><script src="js/config.js"></script><script src="js/admin.js"></script></body></html>
+<!doctype html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Admin — Community Portal</title>
+    <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+    <div class="app">
+        <aside class="sidebar">
+            <div class="brand">Community<span>Portal</span></div>
+            <nav><a href="index.html">Dashboard</a><a href="submit.html">Submit</a><a href="admin.html" class="active">Admin</a></nav>
+            <div class="theme-toggle">
+                <button id="themeBtn">🌙</button>
+            </div>
+        </aside>
+        <main class="main">
+            <header class="topbar">
+                <h1>Admin</h1></header>
+            <section class="grid single">
+                <div class="card">
+                    <h2>Login</h2>
+                    <div id="loginBox">
+                        <input type="password" id="adminPass" placeholder="Admin Password" />
+                        <button id="loginBtn" class="btn primary">Login</button>
+                        <div id="loginStatus" class="status"></div>
+                    </div>
+                </div>
+                <div class="card" id="adminPanel" style="display:none">
+                    <h2>Submissions</h2>
+                    <div id="subs"></div>
+                </div>
+            </section>
+            <footer class="footer">© <span id="year"></span> Community Portal</footer>
+        </main>
+    </div>
+    <script src="js/config.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+
+</html>
