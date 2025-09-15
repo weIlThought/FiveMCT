@@ -1,46 +1,79 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>FiveM Protect the Community</title>
-    <link rel="stylesheet" href="./css/style.css" />
-  </head>
-
-  <body>
-    <div class="top-banner">
-      <div style="display: flex; align-items: center; gap: 12px">
-        <div style="font-weight: 700">Important</div>
-        <div style="color: #111; font-weight: 600">
-          FiveM Protect the Community — stay alert.
-        </div>
-      </div>
-      <button>Learn more</button>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>FiveM Protect the Community</title>
+  <meta name="description" content="FiveM Protect the Community — Compliance, Terms & Protection" />
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+  <div class="top-banner" role="region" aria-label="Important notice">
+    <div style="display:flex;align-items:center;gap:12px">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="opacity:.95"><path d="M12 2 2 22h20L12 2z" fill="#fff"></path></svg>
+      <div style="font-weight:700">Important</div>
+      <div style="color:#111;font-weight:600">FiveM Protect the Community — stay alert and report malicious actors.</div>
     </div>
-    <aside class="sidebar">
-      <div class="brand">FiveM Protect</div>
-      <button class="btn active"><span>Home</span></button>
-    </aside>
-    <main class="main">
-      <section class="hero">
-        <h1>FiveM Protect the Community</h1>
-        <p>Central hub for compliance & protection.</p>
-        <div class="cards">
-          <article class="card">
-            <h3>Compliance Guide</h3>
-          </article>
-          <article class="card">
-            <h3>Terms of Service</h3>
-          </article>
-          <article class="card">
-            <h3>Protection</h3>
-          </article>
-        </div>
-        <div class="cta-row">
-          <a href="submit.html" class="cta">Report</a
-          ><a href="submit.html" class="cta secondary">Support</a>
+    <button onclick="alert('More info: Report violations via support')">Learn more</button>
+  </div>
+  <aside class="sidebar" aria-label="Navigation">
+    <div class="brand">FiveM Protect</div>
+    <a href="./index.html" class="btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M3 10l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z" fill="#06b6d4"/></svg><span>Home</span></a>
+    <div class="nav-section">Guides</div>
+    <a href="./compliance.html" class="btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2l7 7-7 7-7-7 7-7z" fill="#06b6d4"/></svg><span>Compliance Guide</span></a>
+    <a href="./terms.html" class="btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M4 4h16v2H4z" fill="#06b6d4"/></svg><span>Terms of Service</span></a>
+    <a href="./protection.html" class="btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2l8 4v6c0 5-4 9-8 10-4-1-8-5-8-10V6l8-4z" fill="#06b6d4"/></svg><span>Protection</span></a>
+    <div class="nav-section">Actions</div>
+    <a href="./submit.html" class="btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M2 12l10 8 10-8-10-8-10 8z" fill="#06b6d4"/></svg><span>Report an Issue</span></a>
+    <a href="./support.html" class="btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 22c5-3 8-6 8-10V6l-8-4-8 4v6c0 4 3 7 8 10z" fill="#06b6d4"/></svg><span>Support</span></a>
+    <div class="spacer"></div>
+    <div style="font-size:12px;color:var(--muted);">Resources</div>
+    <a href="./partners.html" class="btn"><span>Partners</span></a>
+    <a href="./about.html" class="btn"><span>About & Privacy</span></a>
+  </aside>
+  <main class="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <h1 id="hero-title">FiveM Protect the Community</h1>
+      <p>Your central hub for compliance, code of conduct, and protection measures against malicious actors.</p>
+      <div class="cards" role="list" aria-label="Features">
+        <article class="card" role="listitem" onclick="location.href='./compliance.html'">
+          <div><h3>Compliance Guide</h3><p>Clear rules & examples that explain what is allowed and what isn't.</p></div>
+          <div style="font-size:12px;color:var(--muted)">Last update: 2025-09-01</div>
+        </article>
+        <article class="card" role="listitem" onclick="location.href='./terms.html'">
+          <div><h3>Terms of Service</h3><p>Overview of key ToS points and how to recognize violations.</p></div>
+          <div style="font-size:12px;color:var(--muted)">FAQ & examples</div>
+        </article>
+        <article class="card" role="listitem" onclick="location.href='./protection.html'">
+          <div><h3>Protection</h3><p>Tips to protect yourself from scams, fake stores, and unsafe downloads.</p></div>
+          <div style="font-size:12px;color:var(--muted)">Security checklist</div>
+        </article>
+      </div>
+      <div class="cta-row">
+        <a class="cta" href="./submit.html">Report an Issue</a>
+        <a class="cta secondary" href="./support.html">Contact / Support</a>
+      </div>
+    </section>
+    <div class="container">
+      <section class="section">
+        <h2>Recent Published Reports</h2>
+        <div id="recentList"></div>
+      </section>
+      <section class="section">
+        <h2>Quick Overview</h2>
+        <div class="kv">
+          <div class="item"><strong id="total">0</strong><div style="color:var(--muted)">Published Reports</div></div>
+          <div class="item"><strong>Moderation</strong><div style="color:var(--muted)">All submissions are reviewed before publishing</div></div>
+          <div class="item"><strong>Support</strong><div style="color:var(--muted)">Reach us via the Support page</div></div>
         </div>
       </section>
-    </main>
-  </body>
+      <section class="section">
+        <h2>Why this exists</h2>
+        <p style="color:var(--muted)">The FiveM community benefits when malicious actors are identified and removed quickly. This hub centralizes reporting, guidance and protection best-practices.</p>
+      </section>
+    </div>
+  </main>
+  <script src="./js/config.js"></script>
+  <script src="./js/main.js"></script>
+</body>
 </html>

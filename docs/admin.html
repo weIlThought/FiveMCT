@@ -1,33 +1,30 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Admin Dashboard</title>
-    <link rel="stylesheet" href="./css/style.css" />
-  </head>
-
-  <body>
-    <div class="top-banner">
-      <div>Admin Panel</div>
+<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Admin - FiveM Protect</title><link rel="stylesheet" href="./css/style.css"/></head>
+<body>
+  <div class="top-banner"><div>Admin Panel</div></div>
+  <aside class="sidebar">
+    <div class="brand">FiveM Protect</div>
+    <a href="./index.html" class="btn">Home</a>
+    <a href="./admin.html" class="btn active">Admin</a>
+  </aside>
+  <main class="main">
+    <div class="container">
+      <div class="section">
+        <h1>Admin Login</h1>
+        <div id="loginBox">
+          <input id="adminPass" type="password" placeholder="Admin password">
+          <button id="loginBtn" class="btn primary">Login</button>
+          <div id="loginStatus" class="status" style="color:var(--muted);margin-top:8px"></div>
+        </div>
+      </div>
+      <div id="adminPanel" class="section" style="display:none">
+        <h2>Submissions</h2>
+        <table id="subsTable"><thead><tr><th>ID</th><th>Name</th><th>Message</th><th>Actions</th></tr></thead><tbody></tbody></table>
+      </div>
     </div>
-    <aside class="sidebar">
-      <div class="brand">FiveM Protect</div>
-    </aside>
-    <main class="main">
-      <h2>Admin Logs</h2>
-      <table id="logTable" border="1" style="width: 100%">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Title</th>
-            <th>Description</th>
-          </tr>
-        </thead>
-        <tbody></tbody>
-      </table>
-    </main>
-    <script src="./js/config.js"></script>
-    <script src="./js/admin.js"></script>
-  </body>
+  </main>
+  <script src="./js/config.js"></script>
+  <script src="./js/admin.js"></script>
+</body>
 </html>

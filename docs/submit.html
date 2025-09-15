@@ -1,32 +1,41 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Submit Report</title>
-    <link rel="stylesheet" href="./css/style.css" />
-  </head>
-
-  <body>
-    <div class="top-banner">
-      <div>Submit Report</div>
+<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Submit Report - FiveM Protect</title><link rel="stylesheet" href="./css/style.css"/></head>
+<body>
+  <div class="top-banner"><div>Submit Report</div></div>
+  <aside class="sidebar">
+    <div class="brand">FiveM Protect</div>
+    <a href="./index.html" class="btn">Home</a>
+    <a href="./submit.html" class="btn active">Submit</a>
+    <a href="./support.html" class="btn">Support</a>
+  </aside>
+  <main class="main">
+    <div class="container">
+      <h1>Report an Issue</h1>
+      <section class="section">
+        <form id="reportForm">
+          <label>Dein Name (optional)<input type="text" name="name" placeholder="Name (or alias)"></label>
+          <label>Email (optional)<input type="text" name="email" placeholder="email@example.com"></label>
+          <label>Category
+            <select name="category">
+              <option value="scam">Scam / Fraud</option>
+              <option value="malware">Malware / Malicious files</option>
+              <option value="tos">ToS Violation</option>
+              <option value="other">Other</option>
+            </select>
+          </label>
+          <label>Title<input type="text" name="title" placeholder="Short title" required></label>
+          <label>Description<textarea name="message" placeholder="Describe what happened and include URLs or evidence" required></textarea></label>
+          <label>Evidence URL (optional)<input type="text" name="evidenceUrl" placeholder="https://..."></label>
+          <div style="margin-top:8px">
+            <button type="submit">Send Report</button>
+          </div>
+        </form>
+        <div id="response" style="margin-top:12px;color:var(--muted)"></div>
+      </section>
     </div>
-    <aside class="sidebar">
-      <div class="brand">FiveM Protect</div>
-    </aside>
-    <main class="main">
-      <h2>Submit an Issue</h2>
-      <form id="reportForm">
-        <input name="title" placeholder="Title" required /><textarea
-          name="description"
-          placeholder="Description"
-          required
-        ></textarea
-        ><button type="submit">Submit</button>
-      </form>
-      <div id="response"></div>
-    </main>
-    <script src="./js/config.js"></script>
-    <script src="./js/main.js"></script>
-  </body>
+  </main>
+  <script src="./js/config.js"></script>
+  <script src="./js/main.js"></script>
+</body>
 </html>
