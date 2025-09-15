@@ -1,5 +1,5 @@
 // API base (set to your backend URL)
-const API_BASE = "http://localhost:3000/api";
+const API_BASE = "https://fivemct.onrender.com/api";
 
 // mark active nav link based on current filename
 (function () {
